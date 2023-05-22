@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "InfoJobs",
+  "name_for_model": "infojobs",
+  "description_for_human": "Plugin that searches for job offers on InfoJobs. Submit a prompt and receive a list of job offers with their links.",
+  "description_for_model": "Plugin that searches for job offers on InfoJobs. Submit a prompt and receive a list of job offers with their links.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:3000/logo.png",
+  "contact_email": "your-email@example.com",
+  "legal_info_url": "http://www.example.com/legal"
+}

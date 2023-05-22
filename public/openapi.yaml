@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: InfoJobs API
+  description: An API for searching job offers on InfoJobs.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /api/search-jobs:
+    post:
+      summary: Search for job offers
+      operationId: searchJobs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RequestBody"
+      responses:
+        200:
+          description: The list of job offers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseBody"
+        400:
+          description: Bad Request
+
+components:
+  schemas:
+    RequestBody:
+      type: object
+      properties:
+        prompt:
+          type: string
+          description: The prompt to search for job offers.
+      required:
+        - prompt
+
+    ResponseBody:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: The title of the job offer.
+              link:
+                type: string
+                description: The link to the job offer.
